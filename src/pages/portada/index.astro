@@ -1,36 +1,213 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import FotoA from '../../components/FotoA.astro';
-import TwitchCard from '../../components/TwitchCard.astro'
-import Advertising from '../../components/AdvertisingCard.astro'
-import AboutMe from '../../components/AboutMe.astro'
-import NickCard from '../../components/NickCard.astro'
-import CategoryCard from '../../components/CategoryCard.astro'
-import FotoB from '../../components/FotoB.astro'
-import FotoC from '../../components/FotoC.astro'
-import SponsorCard from '../../components/SponsorCard.astro'
+import Layout from "../../layouts/Layout.astro"; 
 
+const list = [
+    "Empresa A",
+    "Empresa B",
+    "Empresa C",
+    "Empresa D",
+    "Empresa E"
+]
 ---
 
+<style>
+	.circle {
+		width: 30px;
+		border-radius: 50%;
+		background-color: #fff;
+		display: inline-block;
+	}
+	.picture {
+		background-image: url("img/Foto-C.png");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.picture-1 {
+		background-image: url("/img/Foto-B.png");
+		background-position: center;
+		background-size: cover;
+	}
+
+	.profile{
+        background-image: url('img/profile-twitch.png');                
+        width: 200px;
+        height: 200px;
+        background-position: center center;
+        background-size: contain;
+     }
+</style>
+
 <Layout title="markverso bento">
-	<article class="grid grid-cols-12 gap-4 w-full sm:w-7/12 mx-auto p-5">
-		<div class="col-span-4 grid grid-cols-1 gap-4 w-full">
-		  <FotoA />
-		  <AboutMe />		  
+	<article
+		class="grid grid-rows-3 xl:grid-cols-3 gap-4 w-full sm:w-7/12 mx-auto p-5"
+	>
+		<div class="col-span-1 grid grid-cols-1 gap-4 w-full">
+			<!-- foto perfil - redes sociales -->
+			<div class="relative w-full rounded-xl bg-slate-900 text-white">
+				<img
+					src="/img/Foto-A.png"
+					alt="Foto A Streamer X"
+					class="w-full rounded-xl"
+				/>
+				<div class="absolute bottom-0 left-0 right-0 py-2">
+					<ul
+						class="flex flex-row flex-nowrap gap-5 justify-center items-center"
+					>
+						<li
+							class="flex flex-col flex-nowrap items-center gap-1"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon icon-tabler icon-tabler-brand-instagram"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								stroke-width="2"
+								stroke="currentColor"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								><path
+									stroke="none"
+									d="M0 0h24v24H0z"
+									fill="none"></path><path
+									d="M7.5 12a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0z"
+								></path><path d="M16.5 7.5h.01"></path><path
+									d="M12 8a4 4 0 1 1 -4 -4a4 4 0 0 1 4 4z"
+								></path></svg
+							>
+							<span>Instagram</span>
+							<span>5K</span>
+						</li>
+						<li
+							class="flex flex-col flex-nowrap items-center gap-1"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon icon-tabler icon-tabler-brand-instagram"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								stroke-width="2"
+								stroke="currentColor"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								><path
+									stroke="none"
+									d="M0 0h24v24H0z"
+									fill="none"></path><path
+									d="M7.5 12a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0z"
+								></path><path d="M16.5 7.5h.01"></path><path
+									d="M12 8a4 4 0 1 1 -4 -4a4 4 0 0 1 4 4z"
+								></path></svg
+							>
+							<span>Instagram</span>
+							<span>5K</span>
+						</li>
+						<li
+							class="flex flex-col flex-nowrap items-center gap-1"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon icon-tabler icon-tabler-brand-instagram"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								stroke-width="2"
+								stroke="currentColor"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								><path
+									stroke="none"
+									d="M0 0h24v24H0z"
+									fill="none"></path><path
+									d="M7.5 12a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0z"
+								></path><path d="M16.5 7.5h.01"></path><path
+									d="M12 8a4 4 0 1 1 -4 -4a4 4 0 0 1 4 4z"
+								></path></svg
+							>
+							<span>Instagram</span>
+							<span>5K</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- sobre mi -->
+			<div
+				class="relative w-full min-h-48 rounded-xl bg-slate-900 text-white flex flex-col p-3"
+			>
+				<h4 class="text-2xl font-bold">Sobre mí</h4>
+				<hr
+					class="max-w-[50px] border-y-4 rounded-xl my-2 border-green-600"
+				/>
+				<p class="text-base text-pretty">
+					Software Developer, de Santiago de Chile.
+				</p>
+				<p class="text-base text-pretty">
+					Me apasiona la tecnología y la creación de soluciones
+					innovadoras.
+				</p>
+				<p class="text-base text-pretty">
+					En mi tiempo libre disfruto de la música, los videojuegos y
+					aprender nuevas habilidades.
+				</p>
+			</div>
+			<div class="relative w-full h-48 rounded-xl bg-slate-900 text-white p-5">
+				<h4 class="text-2xl font-bold">Patreon</h4>
+				<hr class="max-w-[50px] border-y-4 rounded-xl my-2 border-green-600"/>
+				<ul class="flex flex-row justify-center items-center gap-4 no-wrap overflow-x-hidden">
+					{list.map((item) => {
+						return <li class="bg-slate-950 p-3 rounded-xl">{item}</li>
+					})}        
+				</ul>
+			</div>
 		</div>
-		<div class="col-span-6 grid grid-cols-2 gap-3">
-			<TwitchCard />
-			<Advertising />
-			<NickCard /> 
+		<div class="grid grid-cols-1 gap-3">
+			<a href="#" class="flex flex-col gap-3 w-full h-auto min-h-[200px] rounded-xl bg-slate-900 text-white justify-center items-center hover:bg-slate-150 hover:shadow-md hover:shadow-green-600  transition-all font-bold" >
+    <div class="profile"></div>
+    Twitch.tv/bloidev 
+</a>
+			<div class="relative w-full  h-auto min-h-[200px] rounded-xl bg-slate-900 
+text-white flex flex-col gap-4 justify-center items-center
+">
+    
+    <h4 class="font-bold ">Información de contacto</h4>
+    
+        <p>contacto@bloidev.com</p>        
+        <button class="bg-green-700 py-3 rounded min-w-[100px] mx-auto
+        flex flex-row flex-nowrap justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg> Copiar
+        </button>
+</div>
+			<div
+				class="relative row-span-4 col-span-2 w-full rounded-xl bg-slate-900 text-white flex flex-row flex-nowrap justify-center items-center"
+			>
+				<h1 class="text-6xl font-bold">Bloidev</h1>
+			</div>
+			<div
+				class="relative row-span-4 col-span-2 w-full rounded-xl bg-slate-900 text-white p-5"
+			>
+				<h4 class="font-bold text-4xl">Categorías más usadas</h4>
+			</div>
 		</div>
-		<div class="col-span-2 flex flex-row flex-wrap gap-4 w-full">
-			<CategoryCard />
-			<FotoB />
+		<div class="col-span-1 grid grid-cols-1 gap-4">
+			<div
+				class="picture-1 min-h-52 relative w-full rounded-xl bg-slate-900 text-white"
+			>
+			</div>
+			<div
+				class="picture relative w-full rounded-xl bg-slate-900 text-white"
+			>
+			</div>
+			<div
+				class="relative row-span-4 col-span-1 w-full rounded-xl bg-slate-900 text-white p-5"
+			>
+				<h4 class="font-bold text-4xl">Proyectos de GitHub</h4>
+			</div>
 		</div>
-	</article>
-	<article class="grid grid-cols-2 gap-4 w-full sm:w-7/12 mx-auto pl-5 pb-5 pr-5">
-		<SponsorCard />
-		<FotoC />
 	</article>
 </Layout>
- 

@@ -8,4 +8,5 @@ export default defineConfig({
 			clientSecret: import.meta.env.TWITCH_CLIENT_SECRET,
 		}),
 	],
+	secret: import.meta.env.AUTH_SECRET,
 })

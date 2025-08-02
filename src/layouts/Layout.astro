@@ -1,4 +1,6 @@
 ---
+import Navbar from '../components/navigation/Navbar.astro';
+
 interface Props {
 	title: string;
 }
@@ -17,11 +19,12 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<Navbar />
 		<slot />
 	</body>
 </html>
 <style is:global>
 	 body{
-		background-color:#322530;
+		background-color:#010703;
 	 }
 </style>
