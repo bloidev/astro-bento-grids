@@ -1,23 +1,44 @@
---- 
-const isLogged = true
-
 ---
+const isLogged = true;
+---
+
 <script>
-    let isDarkMode = false;
-    const toggleDarkMode = () => {
-        isDarkMode = !isDarkMode;
-        document.documentElement.classList.toggle('dark', isDarkMode);
-    };
+  let isDarkMode = false;
+  const toggleDarkMode = () => {
+    isDarkMode = !isDarkMode;
+    document.documentElement.classList.toggle("dark", isDarkMode);
+  };
 </script>
 
-<nav class="text-white p-5 bg-slate-900 flex flex-row justify-between">
-    <div class="font-bold text-base">Astro Bento Grids</div>
-    <ul class="nav-links flex flex-row gap-4"> 
-        <li class="nav-item">
-            <a href="/portada" class="nav-link">Portada</a>
-        </li> 
-    </ul>
-    <div class="flex flex-row"> 
-        {isLogged && <div class="font-bold text-base"> By Bloidev</div>}
-    </div>
+<nav
+  class="text-white p-5 bg-slate-950/80 backdrop-blur-md border-b border-slate-900 flex flex-row justify-between items-center sticky top-0 z-50"
+>
+  <div
+    class="font-black text-xl tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500"
+  >
+    BLOIDEV <span class="text-white/20">|</span> BENTO
+  </div>
+
+  <ul class="nav-links flex flex-row gap-8 items-center">
+    <li>
+      <a
+        href="/portada"
+        class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+        >Portada</a>
+    </li>
+    <li>
+      <a
+        href="/dashboard"
+        class="text-sm font-medium text-slate-400 hover:text-white transition-colors"
+        >Dashboard</a>
+    </li>
+    <li>
+      <a
+        href="/login"
+        class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2 rounded-xl text-sm font-bold transition-all transform hover:scale-105 active:scale-95"
+      >
+        Ingresar
+      </a>
+    </li>
+  </ul>
 </nav>
